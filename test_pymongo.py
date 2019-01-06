@@ -11,10 +11,10 @@ class TestMongo(object):
   def add_one(self):
     ''''add data'''
     post = {
-      'title': 'test03',  
-      'content': 'test03....',
+      'title': 'test4',  
+      'content': 'testcontent4....',
       'created_at': datetime.now(),
-      'x':23
+      'x':4
     }
     return self.db.blog.posts.insert_one(post)
 
@@ -38,7 +38,7 @@ class TestMongo(object):
 
 def main():
   obj = TestMongo()
-  # rest = obj.add_one()
+  rest = obj.add_one()
   # print(rest["_id"],'rest')
   # rest = obj.get_more()
   # for item in rest:
@@ -49,9 +49,8 @@ def main():
   # print(rest,'rest')
   # print(rest.matched_count)
   # print(rest.modified_count)
-  rest = obj.delete()
-  print(rest.deleted_count)
+  # rest = obj.delete()
+  # print(rest.deleted_count)
 
 if __name__ == "__main__":
   main()
-
